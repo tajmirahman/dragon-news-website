@@ -4,7 +4,7 @@ import LatestNews from "../components/LatestNews";
 
 const HomeLayOut = () => {
     return (
-        <div>
+        <div className="font-poppins">
             {/* Header section start*/}
 
             <Header />
