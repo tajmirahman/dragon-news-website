@@ -19,15 +19,19 @@ const HomeLayOut = () => {
 
             {/* Navber section start */}
 
-            <section className="w-11/12 mx-auto py-2">
+            <nav className="w-11/12 mx-auto py-2">
                 <Navber />
-            </section>
+            </nav>
 
             {/* Navber section end */}
 
-
-
-            {/* Main section */}
+            {/* Main section start*/}
+            <main className="w-11/12 mx-auto grid grid-cols-12">
+                <aside className="col-span-3">Left Side</aside>
+                <section className="col-span-6">Main Content</section>
+                <aside className="col-span-3">Right Side</aside>
+            </main>
+            {/* Main section end*/}
         </div>
     );
 };
