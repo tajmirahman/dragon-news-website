@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
+import Navber from "../components/Navber";
 
 
 const HomeLayOut = () => {
@@ -16,7 +17,16 @@ const HomeLayOut = () => {
             {/* Header section end*/}
 
 
-            {/* Navber section */}
+            {/* Navber section start */}
+
+            <section className="w-11/12 mx-auto py-2">
+                <Navber />
+            </section>
+
+            {/* Navber section end */}
+
+
+
             {/* Main section */}
         </div>
     );
