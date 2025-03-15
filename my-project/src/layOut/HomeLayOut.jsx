@@ -26,7 +26,7 @@ const HomeLayOut = () => {
             {/* Navber section end */}
 
             {/* Main section start*/}
-            <main className="w-11/12 mx-auto grid grid-cols-12">
+            <main className="w-11/12 mx-auto grid md:grid-cols-12">
                 <aside className="col-span-3">Left Side</aside>
                 <section className="col-span-6">Main Content</section>
                 <aside className="col-span-3">Right Side</aside>
