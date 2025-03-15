@@ -14,9 +14,9 @@ const LeftLayout = () => {
         <div>
             <h1 className='font-semibold'>All Category {categorires.length}</h1>
 
-            <div>
+            <div className='flex flex-col gap-3 py-2'>
                 {
-                    categorires.map(category=> <button key={category.category_id}>{category.category_name}</button>)
+                    categorires.map(category=> <button className='btn' key={category.category_id}>{category.category_name}</button>)
                 }
             </div>
         </div>
