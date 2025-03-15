@@ -1,9 +1,10 @@
 import React from 'react';
+import SocialComponent from '../SocialComponent';
 
 const RightNav = () => {
     return (
         <div>
-            <h1>Right Nav</h1>
+            <SocialComponent />
         </div>
     );
 };
