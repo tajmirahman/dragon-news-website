@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
-import LeftLayout from "../components/LayOutComponent/LeftLayout";
+import LeftLayout from "../components/LayOutComponent/LeftNav";
+import RightNav from "../components/LayOutComponent/RightNav";
 import Navber from "../components/Navber";
 
 
@@ -32,9 +33,12 @@ const HomeLayOut = () => {
                 <aside className="col-span-3">
                     <LeftLayout />
                 </aside>
-                
+
                 <section className="col-span-6">Main Content</section>
-                <aside className="col-span-3">Right Side</aside>
+
+                <aside className="col-span-3">
+                    <RightNav />
+                </aside>
             </main>
             {/* Main section end*/}
         </div>
