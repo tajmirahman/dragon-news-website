@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
+import LeftLayout from "../components/LayOutComponent/LeftLayout";
 import Navber from "../components/Navber";
 
 
@@ -27,7 +28,11 @@ const HomeLayOut = () => {
 
             {/* Main section start*/}
             <main className="w-11/12 mx-auto grid md:grid-cols-12">
-                <aside className="col-span-3">Left Side</aside>
+
+                <aside className="col-span-3">
+                    <LeftLayout />
+                </aside>
+                
                 <section className="col-span-6">Main Content</section>
                 <aside className="col-span-3">Right Side</aside>
             </main>
