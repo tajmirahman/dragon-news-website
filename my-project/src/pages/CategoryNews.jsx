@@ -10,7 +10,7 @@ const CategoryNews = () => {
         <div>
             <h1 className='font-semibold'>Dragon News Home</h1>
 
-            <div>
+            <div className='space-y-3 mt-3'>
                 {
                     news.map(singleNews=> <SingleNews key={singleNews.id} news={singleNews} />)
                 }
