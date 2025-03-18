@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
@@ -8,12 +9,12 @@ const Register = () => {
                 <h1 className="text-center text-2xl font-semibold mt-3">Register your account</h1>
                 <div className="card-body ">
                     <form >
-                        <fieldset className="fieldset">
+                        <fieldset className="fieldset mb-2">
                             <label className="fieldset-label">Name</label>
-                            <input type="text" name="name" className="input w-full" placeholder="Email" />
+                            <input type="text" name="name" className="input w-full" placeholder="Name" />
 
                             <label className="fieldset-label">Photo Url</label>
-                            <input type="email" className="input w-full" placeholder="Email" />
+                            <input type="text" className="input w-full" placeholder="Photo Url" />
 
                             <label className="fieldset-label">Email</label>
                             <input type="email" className="input w-full" placeholder="Email" />
@@ -25,7 +26,7 @@ const Register = () => {
                             <button className="btn btn-neutral mt-4">Register</button>
 
                         </fieldset>
-                        <p>Don't Have an Account? Please <Link to={'/auth/register'} className="text-red-700">Register</Link></p>
+                        <p>Allready Have an Account? Please <Link to={'/auth/login'} className="text-red-700">Login</Link></p>
                     </form>
                 </div>
             </div>

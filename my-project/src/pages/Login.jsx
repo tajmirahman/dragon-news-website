@@ -11,7 +11,7 @@ const Login = () => {
                 <h1 className="text-center text-2xl font-semibold mt-3">Login your account</h1>
                 <div className="card-body ">
                     <form >
-                        <fieldset className="fieldset">
+                        <fieldset className="fieldset mb-2">
                             <label className="fieldset-label">Email</label>
                             <input type="email" className="input w-full" placeholder="Email" />
                             <label className="fieldset-label">Password</label>
