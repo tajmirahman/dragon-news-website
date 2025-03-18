@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import userLogo from '../assets/user.png'
 
 const Navber = () => {
@@ -16,7 +16,7 @@ const Navber = () => {
 
             <div className='flex justify-center items-center gap-2'>
                 <img src={userLogo} alt="" />
-                <button className='btn bg-[#403F3F] text-white'>Login</button>
+                <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
             </div>
             
         </div>
