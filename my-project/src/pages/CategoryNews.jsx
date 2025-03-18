@@ -12,7 +12,7 @@ const CategoryNews = () => {
 
             <div className='space-y-3 mt-3'>
                 {
-                    news.map(singleNews=> <SingleNews key={singleNews.id} news={singleNews} />)
+                    news.map((singleNews, index)=> <SingleNews key={singleNews.id || index} news={singleNews} />)
                 }
             </div>
 
