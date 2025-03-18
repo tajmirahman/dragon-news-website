@@ -29,7 +29,7 @@ const HomeLayOut = () => {
             {/* Navber section end */}
 
             {/* Main section start*/}
-            <main className="w-11/12 mx-auto grid md:grid-cols-12 gap-4">
+            <main className="w-11/12 mx-auto grid md:grid-cols-12 gap-4 ">
 
                 <aside className="col-span-3">
                     <LeftLayout />

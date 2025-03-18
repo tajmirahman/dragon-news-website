@@ -22,7 +22,7 @@ const LeftLayout = () => {
         <div>
             <h1 className='font-semibold mb-2'>All Category {categorires.length}</h1>
 
-            <div className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-3 '>
                 {
                     categorires.map(category => <NavLink to={`category/${category.category_id}`} className='btn' key={category.category_id}>{category.category_name}</NavLink>)
                 }
