@@ -10,7 +10,7 @@ const Navber = () => {
     return (
         <div className='flex justify-between items-center'>
 
-            <div>{user.name}</div>
+            <div>{user && user.name}</div>
 
             <div className='space-x-3'>
                 <Link to={'/'}>Home</Link>
