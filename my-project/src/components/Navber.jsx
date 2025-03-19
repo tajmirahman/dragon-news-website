@@ -5,12 +5,22 @@ import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Navber = () => {
-    const {user}=useContext(AuthContext);
+    const {user, signOut}=useContext(AuthContext);
     // console.log(name)
+
+    signOut()
+    .then(()=>{
+        console.log('sign out successfully')
+    })
+    .catch(error=>{
+        console.log('Error',error);
+    })
+
+
     return (
         <div className='flex justify-between items-center'>
 
-            <div>{user && user.name}</div>
+            <div>{user && user.email}</div>
 
             <div className='space-x-3'>
                 <Link to={'/'}>Home</Link>
