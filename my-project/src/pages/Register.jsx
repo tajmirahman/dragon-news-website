@@ -15,11 +15,13 @@ const Register = () => {
         const photo= form.get('photo');
         const email= form.get('email');
         const password= form.get('password');
+        
         console.log({name,photo,email,password});
 
         createSignUp(email, password)
-        .then(res=>{
-            setUser(res.user)
+        .then(result=>{
+            const user=result.user;
+            setUser(user)
         })
         .catch(error=>{
             console.log("Error",error.message)

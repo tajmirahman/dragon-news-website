@@ -9,12 +9,6 @@ const Navber = () => {
 
     // console.log(name)
 
-    logOut(()=>{
-        console.log('log Out successfully')
-    })
-    .catch(error=>{
-        console.log('Error',error)
-    })
 
 
     return (

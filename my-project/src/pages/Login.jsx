@@ -4,19 +4,19 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Login = () => {
-    const {signInUser}=useContext(AuthContext);
+    const {signInUser,setUser}=useContext(AuthContext);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        const form= new FormData(e.target);
-        const email= form.get('email');
-        const password= form.get('password');
+        const form=e.target;
+        const email= form.email.value;
+        const password= form.password.value;
 
         console.log(email,password);
 
         signInUser(email,password)
         .then(res=>{
-            console.log(res.user)
+            setUser(res.user)
         })
         .catch(error=>{
             console.log('Error',error.message);
