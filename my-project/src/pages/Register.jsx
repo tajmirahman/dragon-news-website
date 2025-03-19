@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
 
-    const {createSignUp}=useContext(AuthContext);
+    const {createSignUp,setUser}=useContext(AuthContext);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -19,7 +19,7 @@ const Register = () => {
 
         createSignUp(email, password)
         .then(res=>{
-            console.log(res.user)
+            setUser(res.user)
         })
         .catch(error=>{
             console.log("Error",error.message)
