@@ -1,19 +1,19 @@
 
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import userLogo from '../assets/user.png'
 import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Navber = () => {
-    const {user, signOut}=useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
     // console.log(name)
 
-    signOut()
-    .then(()=>{
-        console.log('sign out successfully')
+    logOut(()=>{
+        console.log('log Out successfully')
     })
     .catch(error=>{
-        console.log('Error',error);
+        console.log('Error',error)
     })
 
 
@@ -30,9 +30,14 @@ const Navber = () => {
 
             <div className='flex justify-center items-center gap-2'>
                 <img src={userLogo} alt="" />
-                <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
+                {
+                    user && user.email ?
+                        <button onClick={logOut} className='btn bg-[#403F3F] text-white'>Log-Out</button>
+                        : <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
+                }
+
             </div>
-            
+
         </div>
     );
 };
