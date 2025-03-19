@@ -2,25 +2,35 @@ import { Link } from "react-router-dom";
 
 
 const Register = () => {
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+
+        const form= new FormData(e.target);
+        const name= form.get('name');
+        console.log(name);
+    }
+
+
     return (
         <div className="hero-content flex-col lg:flex-row-reverse">
 
             <div className="card bg-base-100  w-full max-w-md shrink-0">
                 <h1 className="text-center text-2xl font-semibold mt-3">Register your account</h1>
                 <div className="card-body ">
-                    <form >
+                    <form onClick={handleSubmit}>
                         <fieldset className="fieldset mb-2">
                             <label className="fieldset-label">Name</label>
                             <input type="text" name="name" className="input w-full" placeholder="Name" />
 
                             <label className="fieldset-label">Photo Url</label>
-                            <input type="text" className="input w-full" placeholder="Photo Url" />
+                            <input type="text" name="photo" className="input w-full" placeholder="Photo Url" />
 
                             <label className="fieldset-label">Email</label>
-                            <input type="email" className="input w-full" placeholder="Email" />
+                            <input type="email" name="email" className="input w-full" placeholder="Email" />
 
                             <label className="fieldset-label">Password</label>
-                            <input type="password" className="input w-full" placeholder="Password" />
+                            <input type="password"  name="password" className="input w-full" placeholder="Password" />
 
 
                             <button className="btn btn-neutral mt-4">Register</button>
