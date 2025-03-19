@@ -6,6 +6,23 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Login = () => {
     const {signInUser}=useContext(AuthContext);
 
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        const form= new FormData(e.target);
+        const email= form.get('email');
+        const password= form.get('password');
+
+        console.log(email,password);
+
+        signInUser(email,password)
+        .then(res=>{
+            console.log(res.user)
+        })
+        .catch(error=>{
+            console.log('Error',error.message);
+        })
+
+    }
 
    
 
@@ -17,13 +34,17 @@ const Login = () => {
             <div className="card bg-base-100  w-full max-w-md shrink-0">
                 <h1 className="text-center text-2xl font-semibold mt-3">Login your account</h1>
                 <div className="card-body ">
-                    <form >
+                    <form onSubmit={handleSubmit}>
                         <fieldset className="fieldset mb-2">
+                            
                             <label className="fieldset-label">Email</label>
-                            <input type="email" className="input w-full" placeholder="Email" />
+                            <input type="email" name="email" className="input w-full" placeholder="Email" />
+
                             <label className="fieldset-label">Password</label>
-                            <input type="password" className="input w-full" placeholder="Password" />
+                            <input type="password" name="password" className="input w-full" placeholder="Password" />
+
                             <div><a className="link link-hover">Forgot password?</a></div>
+
                             <button className="btn btn-neutral mt-4">Login</button>
                         </fieldset>
                         <p>Don't Have an Account? Please <Link to={'/auth/register'} className="text-red-700">Register</Link></p>
