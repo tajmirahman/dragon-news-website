@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -7,6 +7,7 @@ const Login = () => {
     const {signInUser,setUser}=useContext(AuthContext);
     const location=useLocation();
     const navigate=useNavigate();
+    const [error, setError]=useState({});
     // console.log(location);
 
     const handleSubmit=(e)=>{
@@ -22,8 +23,8 @@ const Login = () => {
             setUser(res.user);
             navigate(location?.state ? location.state : '/');
         })
-        .catch(error=>{
-            console.log('Error',error.message);
+        .catch(err=>{
+            setError({...error, login:err.message});
         })
 
     }
@@ -46,7 +47,9 @@ const Login = () => {
 
                             <label className="fieldset-label">Password</label>
                             <input type="password" name="password" className="input w-full" placeholder="Password" />
-
+                            {
+                                error.login && <p>{error.login}</p>
+                            }
                             <div><a className="link link-hover">Forgot password?</a></div>
 
                             <button className="btn btn-neutral mt-4">Login</button>
