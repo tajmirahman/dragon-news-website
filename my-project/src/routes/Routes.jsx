@@ -30,7 +30,7 @@ const routes = createBrowserRouter([
         element: <PrivateRoutes>
             <NewsDetails />
         </PrivateRoutes>,
-        loader:({params})=> fetch(`https://openapi.programming-hero.com/api/news/${params.id}`)
+        loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/news/${params.id}`)
     },
     {
         path: 'auth',
