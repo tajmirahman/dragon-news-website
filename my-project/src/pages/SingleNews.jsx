@@ -25,8 +25,8 @@ const NewsCard = ({ news }) => {
         className="w-full h-48 object-cover rounded-lg mt-3"
       />
       <p className="mt-2 text-sm text-gray-600">{news.details.slice(0, 100)}...</p>
-      <Link to={'/news.id'} className="text-primary font-medium mt-2 block">
-        Read More
+      <Link to={`/news/${news._id}`} className="text-primary font-medium mt-2 block">
+        Read More...
       </Link>
       <div className="mt-4 flex justify-between items-center text-gray-600 text-sm">
         <div className="flex items-center gap-1">
