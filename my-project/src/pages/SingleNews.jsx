@@ -1,5 +1,6 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   return (
@@ -24,9 +25,9 @@ const NewsCard = ({ news }) => {
         className="w-full h-48 object-cover rounded-lg mt-3"
       />
       <p className="mt-2 text-sm text-gray-600">{news.details.slice(0, 100)}...</p>
-      <a href="#" className="text-primary font-medium mt-2 block">
+      <Link to={'/news.id'} className="text-primary font-medium mt-2 block">
         Read More
-      </a>
+      </Link>
       <div className="mt-4 flex justify-between items-center text-gray-600 text-sm">
         <div className="flex items-center gap-1">
           <FaStar className="text-yellow-500" />
