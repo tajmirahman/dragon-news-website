@@ -23,12 +23,24 @@ const Navber = () => {
             </div>
 
             <div className='flex justify-center items-center gap-2'>
-                <img src={userLogo} alt="" />
-                {
-                    user && user.email ?
-                        <button onClick={logOut} className='btn bg-[#403F3F] text-white'>Log-Out</button>
-                        : <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
-                }
+                <div>
+                    {
+                        user && user?.email ?
+                        <div><img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" />
+                        <p>{user?.displayName}</p>
+                        </div>
+                        :
+                        <img src={userLogo} alt="" />
+                    }
+                    
+                </div>
+                <div>
+                    {
+                        user && user.email ?
+                            <button onClick={logOut} className='btn bg-[#403F3F] text-white'>Log-Out</button>
+                            : <Link to={'/auth/login'} className='btn bg-[#403F3F] text-white'>Login</Link>
+                    }
+                </div>
 
             </div>
 

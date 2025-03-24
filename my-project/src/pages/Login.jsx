@@ -22,6 +22,7 @@ const Login = () => {
         .then(res=>{
             setUser(res.user);
             navigate(location?.state ? location.state : '/');
+            console.log(res.user)
         })
         .catch(err=>{
             setError({...error, login:err.code});
