@@ -1,31 +1,36 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Register = () => {
 
-    const {createSignUp,setUser}=useContext(AuthContext);
+    const { createSignUp, setUser, updateUserProfile } = useContext(AuthContext);
+    const [error, setError] = useState({});
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const form= new FormData(e.currentTarget);
-        const name= form.get('name');
-        const photo= form.get('photo');
-        const email= form.get('email');
-        const password= form.get('password');
-        
-        console.log({name,photo,email,password});
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        if (name.length < 5) {
+            setError({ ...error, name: 'please write at least 5 character' })
+        }
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+
+        console.log({ name, photo, email, password });
 
         createSignUp(email, password)
-        .then(result=>{
-            const user=result.user;
-            setUser(user)
-        })
-        .catch(error=>{
-            console.log("Error",error.message)
-        })
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                updateUserProfile({displayName:name, photoUrl:photo});
+            })
+            .catch(error => {
+                console.log("Error", error.message)
+            })
     }
 
 
@@ -39,6 +44,9 @@ const Register = () => {
                         <fieldset className="fieldset mb-2">
                             <label className="fieldset-label">Name</label>
                             <input type="text" name="name" className="input w-full" placeholder="Name" />
+                            {
+                                error.name && <p className="text-red-700">{error.name}</p>
+                            }
 
                             <label className="fieldset-label">Photo Url</label>
                             <input type="text" name="photo" className="input w-full" placeholder="Photo Url" />
@@ -47,7 +55,7 @@ const Register = () => {
                             <input type="email" name="email" className="input w-full" placeholder="Email" />
 
                             <label className="fieldset-label">Password</label>
-                            <input type="password"  name="password" className="input w-full" placeholder="Password" />
+                            <input type="password" name="password" className="input w-full" placeholder="Password" />
 
 
                             <button className="btn btn-neutral mt-4">Register</button>
