@@ -7,7 +7,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    // console.log(name)
+    
 
 
 
@@ -26,9 +26,11 @@ const Navber = () => {
                 <div>
                     {
                         user && user?.email ?
-                        <div><img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" />
-                        <p>{user?.displayName}</p>
+                        <div>
+                            <img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" />
+                            <p>{user?.displayName}</p>
                         </div>
+                        
                         :
                         <img src={userLogo} alt="" />
                     }
