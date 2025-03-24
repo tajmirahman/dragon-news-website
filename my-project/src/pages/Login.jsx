@@ -4,33 +4,33 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Login = () => {
-    const {signInUser,setUser}=useContext(AuthContext);
-    const location=useLocation();
-    const navigate=useNavigate();
-    const [error, setError]=useState({});
+    const { signInUser, setUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [error, setError] = useState({});
     // console.log(location);
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const form=e.target;
-        const email= form.email.value;
-        const password= form.password.value;
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
 
-        console.log(email,password);
+        // (email,password);
 
-        signInUser(email,password)
-        .then(res=>{
-            setUser(res.user);
-            navigate(location?.state ? location.state : '/');
-            console.log(res.user)
-        })
-        .catch(err=>{
-            setError({...error, login:err.code});
-        })
+        signInUser(email, password)
+            .then(res => {
+                setUser(res.user);
+                navigate(location?.state ? location.state : '/');
+                // console.log(res.user)
+            })
+            .catch(err => {
+                setError({ ...error, login: err.code });
+            })
 
     }
 
-   
+
 
     return (
 
@@ -42,7 +42,7 @@ const Login = () => {
                 <div className="card-body ">
                     <form onSubmit={handleSubmit}>
                         <fieldset className="fieldset mb-2">
-                            
+
                             <label className="fieldset-label">Email</label>
                             <input type="email" name="email" className="input w-full" placeholder="Email" />
 
