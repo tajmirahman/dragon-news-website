@@ -20,6 +20,7 @@ const Navber = () => {
                 <Link to={'/'}>Home</Link>
                 <Link to={'/about'}>About</Link>
                 <Link to={'/carrer'}>Carrer</Link>
+                <Link to={'/dev'}>Dev Dragon</Link>
             </div>
 
             <div className='flex justify-center items-center gap-2'>
