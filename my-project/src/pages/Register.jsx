@@ -32,11 +32,11 @@ const Register = () => {
                         navigate("/");
                     })
                     .catch(err => {
-                        console.log(err);
+                        setError(err.code);
                     })
             })
             .catch(error => {
-                console.log("Error", error.message)
+                setError("Error", error.message)
             })
     }
 

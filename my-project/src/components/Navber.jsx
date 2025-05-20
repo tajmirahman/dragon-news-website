@@ -7,7 +7,6 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    
 
 
 
